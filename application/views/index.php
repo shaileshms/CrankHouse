@@ -22,6 +22,12 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Italianno">
     <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 
+    <!-- Slider -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style1.css" />
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/modernizr.custom.86080.js"></script>
+
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/animate.min.css" type="text/css">
@@ -51,7 +57,13 @@
 </head>
 
 <body id="page-top">
-
+<ul class="cb-slideshow">
+    <li><span>Image 01</span><div>
+    <li><span>Image 02</span><div>
+    <li><span>Image 03</span><div>
+    <li><span>Image 04</span><div>
+    <li><span>Image 05</span><div>
+</ul>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
