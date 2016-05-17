@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
- <title>Crank house - Mountain Bikes Nepal</title>
+    <title>Crank house - Mountain Bikes Nepal</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
     <meta name="author" content="Crank House">
     <meta name="keyword" content="Mountain, bike,mountainbike,  Nepal, MTB, cycle, tour">
 
-   
+
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" type="text/css">
@@ -23,7 +23,6 @@
     <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 
     <!-- Slider -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style1.css" />
 
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/modernizr.custom.86080.js"></script>
@@ -42,28 +41,23 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-66283578-2', 'auto');
-  ga('send', 'pageview');
+        ga('create', 'UA-66283578-2', 'auto');
+        ga('send', 'pageview');
 
-   </script>
-    
+    </script>
+
 
 </head>
 
 <body id="page-top">
-<ul class="cb-slideshow">
-    <li><span>Image 01</span><div>
-    <li><span>Image 02</span><div>
-    <li><span>Image 03</span><div>
-    <li><span>Image 04</span><div>
-    <li><span>Image 05</span><div>
-</ul>
+
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -99,6 +93,9 @@
                     <a class="page-scroll" href="#shop">Bike Shop</a>
                 </li>
                 <li>
+                    <a class="page-scroll" href='<?php echo base_url('crankhouse/gallery'); ?>' target="_blank">Gallery</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="#contact">Contact Us</a>
                 </li>
             </ul>
@@ -111,7 +108,13 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
+<div>
+    <ul class="cb-slideshow">
+        <li><span>Image 01</span></li>
+        <li><span>Image 02</span></li>
+        <li><span>Image 03</span></li>
+    </ul>
+</div>
 <header>
     <div class="header-content">
         <div class="header-content-inner">
@@ -129,7 +132,7 @@
                 <h2 class="section-heading">Mountain bikes are our passion </h2>
                 <hr class="light">
                 <p class="text-faded">Biking is our passion and life! We believe that the trials in Nepal are second to none and want you to experience the awesome himalayas, our secret untouched roads and unique old cities the best way there is!!!     </p>
-                  <p class="text-faded">Nepal is truly a unique nation. We can guide you through our colourful cities and breakthtaking himalayan trails where you can challenge yourself and feel one with nature. We have great mountain bike tour packages to suit your needs and your appetite for adventure!    </p>
+                <p class="text-faded">Nepal is truly a unique nation. We can guide you through our colourful cities and breakthtaking himalayan trails where you can challenge yourself and feel one with nature. We have great mountain bike tour packages to suit your needs and your appetite for adventure!    </p>
                 <a href="#services" title="Find out about our services and bike shops" class="btn btn-default btn-xl page-scroll">Get Started!</a>
             </div>
         </div>
@@ -383,8 +386,8 @@
         <div class="row">
             <div class="col-lg-6 col-sm-6">
 
-                    <h2 class="section-heading text-muted" >Let's Get In Touch!</h2>
-                    <hr class="primary">
+                <h2 class="section-heading text-muted" >Let's Get In Touch!</h2>
+                <hr class="primary">
 
 
                 <form class="form-horizontal" id="formsubmit" role="form" method="post" action="<?php echo base_url() ?>crankhouse/contact">

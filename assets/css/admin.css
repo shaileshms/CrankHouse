@@ -1,3 +1,47 @@
 .header {
     margin-top: 25px;
 }
+
+.sidebaricon {
+    font-size: 15px;
+    color: black;
+}
+
+.sidebar{
+    position: fixed;
+    z-index: 1;
+}
+
+#cssmenu ul {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+#cssmenu {
+    background: #f8f8f8;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 1024px ;
+    width: 15em;
+}
+#cssmenu li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#cssmenu a {
+    color: #808080;
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#cssmenu a:hover {
+    background: #2580a2;
+    color: #fff;
+    padding-bottom: 8px;
+}
+

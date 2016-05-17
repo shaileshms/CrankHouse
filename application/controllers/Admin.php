@@ -18,6 +18,13 @@ class Admin extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('trip_model','',TRUE);
+    }
+
     public function index()
     {
         $this->load->view('admin/login');
@@ -39,6 +46,63 @@ class Admin extends CI_Controller {
             redirect('admin', 'refresh');
         }
 
+    }
+
+    public function trip()
+    {
+        $this->load->view('admin/trip');
+    }
+
+    public function listTrip(){
+        $this->trip_model->listTrip();
+    }
+
+    public function deleteTrip(){
+        $this->trip_model->delete();
+        echo'<div class="alert alert-success">Trip deleted Successfully</div>';
+        exit;
+    }
+
+    public function addTripView()
+    {
+        $this->load->view('admin/addTrip');
+    }
+
+    public function addTrip()
+    {
+        $res['error']="";
+        $res['success']="";
+
+        $this->form_validation->set_rules('trip', 'Trip name', 'required');
+
+        $id = $this->check_duplicate();
+
+        if ($this->form_validation->run() == FALSE){
+            $res['error']='<div class="alert alert-danger">'.validation_errors().'</div>';
+        }
+        else{
+            $this->trip_model->create($id);
+        }
+        header('Content-Type: application/json');
+        echo json_encode($res);
+        exit;
+    }
+
+    public function check_duplicate()
+    {
+        $id = uniqid();
+
+        //query the database
+        $result = $this->trip_model->check_tripID($id);
+
+        if($result)
+        {
+            $this->check_duplicates();
+        }
+        else
+        {
+            return $id;
+        }
     }
 
     public function logout()

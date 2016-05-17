@@ -26,8 +26,42 @@
     <!-- /.container -->
 </nav>
 
+<div style="margin-top: 70px;">
+        <div class="col-md-2 sidebar" id="cssmenu">
+            <ul>
+                <li><a href="#" class="trip active"><span class="glyphicon glyphicon-list sidebaricon"></span>&nbsp;&nbsp;Trips</a></li>
+                <li><a href="#" class="addtrip"><span class="glyphicon glyphicon-plus sidebaricon"></span>&nbsp;&nbsp;Add Trips</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10" id="content">
+        </div>
+</div>
+
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#content').load('trip','refresh');
+        $('#cssmenu li a').on('click', function() {
+            $(this).parent().parent().find('.active').removeClass('active');
+            $(this).parent().addClass('active');
+        });
+    });
+
+
+
+    $('.trip').click(function(){
+        $('#content').load('trip','refresh');
+    });
+    $('.addtrip').click(function(){
+        $('#content').load('addTripView','refresh');
+    });
+    $('.gallery').click(function(){
+        $('#content').load('gallery','refresh');
+    });
+</script>
+
 
 </body>
 </html>
