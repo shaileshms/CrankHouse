@@ -23,6 +23,7 @@ class Admin extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('trip_model','',TRUE);
+        $this->load->helper('url');
     }
 
     public function index()
@@ -82,6 +83,18 @@ class Admin extends CI_Controller {
         }
         else{
             $this->trip_model->create($id);
+
+            $this->load->model('tripDetail_model','',TRUE);
+
+            $days = $this->input->post('duration');
+            for($i=1; $i<=$days;$i++) {
+                $tripDetail = new TripDetail_model();
+                $tripDetail->trip_id = $id;
+                $tripDetail->day = "Day ".$i;
+                $tripDetail->day_detail = $this->input->post('day'.$i);
+                $tripDetail->create();
+            }
+            $res['success']='<div class="alert alert-success">Trip added Successfully</div>';
         }
         header('Content-Type: application/json');
         echo json_encode($res);
@@ -97,7 +110,7 @@ class Admin extends CI_Controller {
 
         if($result)
         {
-            $this->check_duplicates();
+            $this->check_duplicate();
         }
         else
         {

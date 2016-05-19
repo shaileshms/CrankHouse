@@ -11,6 +11,7 @@
     <div class="errorresponse"></div>
     <h2>New trip information:</h2>
     <form class="form-horizontal" id="frmadd" role="form" action="<?php echo base_url() ?>admin/addTrip" method="POST" >
+
         <div class="form-group">
             <label class="control-label col-sm-2" for="project">Trip Name:</label>
             <div class="col-sm-4">
