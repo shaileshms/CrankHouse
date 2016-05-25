@@ -1,13 +1,12 @@
 <div class="container col-md-12" style="margin-left: 15em; margin-top: 2em;">
 <div id="response"></div>
-
+<div class="btn btn-info" id="add">Add Trip</div>
 <div class="panel-body">
     <div class="table-responsive">
 
         <table class="table table-striped table-hover" id="trip">
             <thead class="cf">
             <tr>
-                <td><strong>ID</strong></td>
                 <td><strong>Trip</strong></td>
                 <td><strong>Price</strong></td>
                 <td><strong>Altitude</strong></td>
@@ -38,12 +37,22 @@
                 type:'GET'
             }).done(function (data){
                 $("#listTrip").html(data);
-//                $('#trip').paging({limit:10});
-
                 btnedit = $("#listTrip .btnedit");
                 btndelete = $("#listTrip .btndelete");
                 var deleteurl = btndelete.attr('href');
                 var editurl = btnedit.attr('href');
+
+                $('#add').on('click',function(e){
+                    e.preventDefault();
+                    $.colorbox({
+                        href:"<?php echo base_url()?>admin/addTripView/",
+                        top:50,
+                        width:800,
+                        onClosed:function() {
+                            listTrip();
+                        }
+                    });
+                });
 
                 //delete record
                 btndelete.on('click', function (e){
@@ -69,8 +78,8 @@
                     $.colorbox({
                         href:"<?php echo base_url()?>admin/editTrip/"+editid,
                         top:50,
-                        width:500,
-                        onClosed:function() {listUser();}
+                        width:800,
+                        onClosed:function() {listTrip();}
                     });
                 });
 

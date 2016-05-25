@@ -51,12 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['mountain-bike-shop'] = 'shop';
 $route['mountain-bike-trip'] = 'trips';
-$route['annapurna-mountain-bike-trip'] = 'trips/annapurna';
-$route['jomsom-muktinath-mountain-bike-trip'] = 'trips/jomsom';
-$route['kathmandu-mountain-bike-trip'] = 'trips/kathmandu';
-$route['kathmandu-round-mountain-bike-trip'] = 'trips/kathmanduround';
-$route['pokhara-mountain-bike-trip'] = 'trips/pokhara';
-$route['classic-nepal-mountain-bike-trip'] = 'trips/classicnepal';
 $route['default_controller'] = 'crankhouse';
 $route['404_override'] = '';
 //$route['translate_uri_dashes'] = FALSE;

@@ -194,32 +194,32 @@
     <div class="container-fluid">
         <div class="row no-gutter">
             <div class="col-lg-4 col-sm-6">
-                <a title="Annapurna Mountain Bike Trip"href="<?php echo base_url("annapurna-mountain-bike-trip");?>" class="trips-box">
-                    <img src="assets/img/trips/3.jpg" class="img-responsive" alt="">
+                <a title=" Round Annapurna Mountain Bike Trip" href="<?php echo base_url("mountain-bike-trip");?>?id=5743ee84ac" class="trips-box">
+                    <img src="assets/img/trips/RoundAnnapurna.jpg" class="img-responsive" alt="">
                     <div class="caption">
-                        <p>Annapurna Trip</p>
+                        <p>Round Annapurna Trip</p>
                     </div>
                     <div class="caption-right">
-                        <p>12 Days</p>
+                        <p>14 Days</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a title="Mustang Mountain Bike Trip" href="<?php echo base_url("jomsom-muktinath-mountain-bike-trip");?>" class="trips-box">
-                    <img src="assets/img/trips/4.jpg" class="img-responsive" alt="">
+                <a title="Jomsom Muktinath Mountain Bike Trip" href="<?php echo base_url("mountain-bike-trip");?>?id=573ef9c578" class="trips-box">
+                    <img src="assets/img/trips/JomsomMuktinath.jpg" class="img-responsive" alt="">
                     <div class="caption">
                         <p>Jomsom-Muktinath Trip</p>
                     </div>
                     <div class="caption-right">
-                        <p>6 Days</p>
+                        <p>7 Days</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a title="Kathmandu Mountain Bike Trip" href="<?php echo base_url("kathmandu-mountain-bike-trip");?>" class="trips-box">
-                    <img src="assets/img/trips/7.jpg" class="img-responsive" alt="">
+                <a title="Mulpani Day Mountain Bike Trip" href="<?php echo base_url("mountain-bike-trip");?>?id=5743f220dd" class="trips-box">
+                    <img src="assets/img/trips/Mulpani.jpg" class="img-responsive" alt="">
                     <div class="caption">
-                        <p>Kathmandu Trip</p>
+                        <p>Mulpani Day Trip</p>
                     </div>
                     <div class="caption-right">
                         <p>1 Day</p>
@@ -227,35 +227,35 @@
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a title="Kathmandu Round Mountain Bike Trip" href="<?php echo base_url("kathmandu-round-mountain-bike-trip");?>" class="trips-box">
-                    <img src="assets/img/trips/1.jpg" class="img-responsive" alt="">
+                <a title="Kakani Overnight Mountain Bike Trip" href="<?php echo base_url("mountain-bike-trip");?>?id=5743f53fa3" class="trips-box">
+                    <img src="assets/img/trips/KakaniOvernight.jpg" class="img-responsive" alt="">
                     <div class="caption">
-                        <p>Kathmandu Round Trip</p>
+                        <p>Kakani Overnight Trip</p>
                     </div>
                     <div class="caption-right">
-                        <p>8 Days</p>
+                        <p>2 Days</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a title="Kathmandu-Pokhara Mountain Bike Trip" href="<?php echo base_url("pokhara-mountain-bike-trip");?>" class="trips-box">
-                    <img src="assets/img/trips/5.jpg" class="img-responsive" alt="">
+                <a title="Kathmandu-Pokhara Mountain Bike Trip" href="<?php echo base_url("mountain-bike-trip");?>?id=5743f770b1" class="trips-box">
+                    <img src="assets/img/trips/KathmanduPokhara.jpg" class="img-responsive" alt="">
                     <div class="caption">
                         <p>Kathmandu-Pokhara Trip</p>
                     </div>
                     <div class="caption-right">
-                        <p>8 Days</p>
+                        <p>5 Days</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a title="Classic Nepal Mountain Bike Trip" href="<?php echo base_url("classic-nepal-mountain-bike-trip");?>" class="trips-box">
-                    <img src="assets/img/trips/6.jpg" class="img-responsive" alt="">
+                <a title="Nagarkot Downhill Mountain Bike Trip" href="<?php echo base_url("mountain-bike-trip");?>?id=5743fd1ea9" class="trips-box">
+                    <img src="assets/img/trips/NagarkotDownhill.jpg" class="img-responsive" alt="">
                     <div class="caption">
-                        <p>Classic Nepal Trip</p>
+                        <p>Nagarkot Downhill Trip</p>
                     </div>
                     <div class="caption-right">
-                        <p>13 Days</p>
+                        <p>1 Day</p>
                     </div>
                 </a>
             </div>
@@ -267,7 +267,7 @@
     <div class="container text-center">
         <div class="call-to-action">
             <h2>Explore all trips! </h2>
-            <a href="<?php echo base_url("mountain-bike-trip");?>" class="btn btn-primary btn-xl wow tada">Find out more</a>
+            <a href="<?php echo base_url("mountain-bike-trip");?>?id=573ef9c578" class="btn btn-primary btn-xl wow tada">Find out more</a>
         </div>
     </div>
 </aside>

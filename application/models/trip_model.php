@@ -37,44 +37,34 @@ Class Trip_model extends CI_Model {
         }
     }
 
-    public function create($id){
+    public function create($id,$images){
+        $file_name = $images[0]['file_name'];
         $data = array('id'=>$id,
             'tripName'=>$this->input->post('trip'),
+            'description'=>$this->input->post('description'),
             'price'=>$this->input->post('price'),
             'altitude'=>$this->input->post('altitude'),
             'difficulty'=>$this->input->post('difficulty'),
             'distance'=>$this->input->post('distance'),
-            'duration'=>$this->input->post('duration'));
+            'duration'=>$this->input->post('duration'),
+            'image'=>$file_name);
         $this->db->insert('trips', $data);
     }
 
     public function update(){
-//        $this -> db -> select('password');
-//        $this -> db -> from('users');
-//        $this -> db -> where('username',$this->input->post('hidden'));
-//        $this -> db -> limit(1);
-//        $query = $this -> db -> get();
-//        foreach($query->result() as $row) {
-//
-//            if($row->password == $this->input->post('password')){
-//                $password = $this->input->post('password');
-//
-//            } else {
-//                $password = MD5($this->input->post('password'));
-//
-//            }
-//        }
-//
-//        $this->db->where('username',$this->input->post('username'));
-//        $data = array(
-//            'firstname'=>$this->input->post('firstname'),
-//            'lastname'=>$this->input->post('lastname'),
-//            'password'=>$password,
-//            'username'=>$this->input->post('username')
-//        );
-//
-//        $this->db->where('username', $this->input->post('hidden'));
-//        $this->db->update('users', $data);
+        $data = array(
+            'tripName'=>$this->input->post('tripName'),
+            'description'=>$this->input->post('description'),
+            'price'=>$this->input->post('price'),
+            'altitude'=>$this->input->post('altitude'),
+            'difficulty'=>$this->input->post('difficulty'),
+            'distance'=>$this->input->post('distance'),
+            'duration'=>$this->input->post('duration')
+        );
+
+        $this->db->where('id', $this->input->post('hidden'));
+        $this->db->update('trips', $data);
+
     }
 
     public function delete(){
@@ -93,7 +83,6 @@ Class Trip_model extends CI_Model {
             $edit = base_url().'admin/editTrip/';
             $delete = base_url().'admin/deleteTrip/';
             echo "<tr>
-                        <td>$row->id</td>
                         <td>$row->tripName</td>
                         <td>$row->price</td>
                         <td>$row->altitude</td>

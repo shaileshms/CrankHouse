@@ -45,7 +45,7 @@
 <!--            <img src="../assets/img/trips/1.jpg">-->
 
             <?php
-            foreach(glob("assets/img/trips/*.*") as $filename){ ?>
+            foreach(glob("assets/img/gallery/*.*") as $filename){ ?>
 <!--                --><?php //echo $filename; ?>
                 <img src="<?php echo base_url().$filename; ?>" />
             <?php

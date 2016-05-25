@@ -44,6 +44,10 @@ class Crankhouse extends CI_Controller {
 
     }
 
+    public function enquiry(){
+        $this->load->view('enquiry');
+    }
+
     public function gallery()
     {
         $this->load->view('gallery');

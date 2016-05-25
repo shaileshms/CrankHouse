@@ -1,28 +1,47 @@
 <div class="well">
     <div class="errorresponse"></div>
     <form class="form" id="frmupdate" role="form" action="<?php echo base_url() ?>admin/updateTrip" method="POST">
-        <?php foreach($query->result() as $row):?>
+        <?php foreach($trip->result() as $row):?>
             <div class="form-group">
                 <label for="trip">Trip</label>
-                <input type="trip" name="trip" class="form-control" value="<?php echo $row->tripName?>" readonly>
+                <input type="text" name="tripName" class="form-control" value="<?php echo $row->tripName?>">
             </div>
             <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input type="text" class="form-control" name="firstname" value="<?php echo $row->firstname?>">
-            </div>
-
-            <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" class="form-control" value="<?php echo $row->lastname?>">
+                <label for="description">Description</label>
+                <textarea rows="6" class="form-control" name="description" id="trip"><?php echo $row->description?></textarea>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $row->password?>">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" name="price" value="<?php echo $row->price?>">
             </div>
 
             <div class="form-group">
-                <input type="hidden" name="hidden" value="<?php echo $row->username ?>"/>
-                <input type="submit" class="btn btn-success" id="username" value="update">
+                <label for="altitude">Altitude</label>
+                <input type="text" name="altitude" class="form-control" value="<?php echo $row->altitude?>">
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Difficulty</label>
+                <input type="text" name="difficulty" class="form-control" value="<?php echo $row->difficulty?>">
+            </div>
+            <div class="form-group">
+                <label for="distance">Distance</label>
+                <input type="text" name="distance" class="form-control" value="<?php echo $row->distance?>">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="text" name="duration" class="form-control" value="<?php echo $row->duration?>" readonly>
+            </div>
+
+            <?php $i=1; foreach($detail->result() as $day): ?>
+                <div class="form-group">
+                    <label for="day"><?php echo $day->day;?></label>
+                    <textarea rows="6" class="form-control" name="<?php echo "day".$i;?>"><?php echo $day->day_detail?></textarea>
+                </div>
+            <?php $i++; endforeach;?>
+
+            <div class="form-group">
+                <input type="hidden" name="hidden" value="<?php echo $row->id ?>"/>
+                <input type="submit" class="btn btn-success" id="trip" value="Update">
             </div>
         <?php endforeach;?>
     </form>
@@ -33,7 +52,7 @@
         $("#frmupdate").submit(function(e){
             e.preventDefault();
             $.ajax({
-                url:'<?php echo base_url() ?>user/update',
+                url:'<?php echo base_url() ?>admin/updateTrip',
                 type:'POST',
                 dataType:'json',
                 data: $("#frmupdate").serialize()
@@ -43,10 +62,6 @@
                     $(".errorresponse").html(mydata['error']);
                 }
                 else{
-                    $(".errorresponse").text('');
-                    $('#frmupdate')[0].reset();
-                    $("#response").html(mydata['success']);
-
                     $.colorbox.close();
                     $("#response").html(mydata['success']);
                 }
