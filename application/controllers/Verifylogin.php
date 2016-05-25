@@ -7,7 +7,7 @@
  */
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class verifylogin extends CI_Controller {
+class Verifylogin extends CI_Controller {
 
     function __construct()
     {

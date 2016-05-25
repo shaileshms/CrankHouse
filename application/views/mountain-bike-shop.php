@@ -83,6 +83,9 @@
                 <li>
                     <a class="page-scroll" href="<?php echo base_url('#shop');?>">Bike Shop</a>
                 </li>
+                 <li>
+                    <a class="page-scroll" href='<?php echo base_url('crankhouse/gallery'); ?>' target="_blank">Gallery</a>
+                </li>
                 <li>
                     <a class="page-scroll" href="<?php echo base_url('#contact');?>">Contact Us</a>
                 </li>

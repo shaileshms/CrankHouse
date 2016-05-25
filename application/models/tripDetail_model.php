@@ -5,7 +5,7 @@
  * Date: 9/21/15
  * Time: 1:11 PM
  */
-Class TripDetail_model extends CI_Model {
+Class Tripdetail_model extends CI_Model {
 
     public $trip_id;
     public $day;

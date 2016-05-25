@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin extends CI_Controller {
+class Admin extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -24,8 +24,8 @@ class admin extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('trip_model','',TRUE);
-        $this->load->model('tripDetail_model','',TRUE);
+        $this->load->model('Trip_model','',TRUE);
+        $this->load->model('Tripdetail_model','',TRUE);
         $this->load->helper('url');
     }
 
@@ -58,11 +58,11 @@ class admin extends CI_Controller {
     }
 
     public function listTrip(){
-        $this->trip_model->listTrip();
+        $this->Trip_model->listTrip();
     }
 
     public function deleteTrip(){
-        $this->trip_model->delete();
+        $this->Trip_model->delete();
         echo'<div class="alert alert-success">Trip deleted Successfully</div>';
         exit;
     }
@@ -122,13 +122,13 @@ class admin extends CI_Controller {
             $res['error']='<div class="alert alert-danger">'.validation_errors().'</div>';
         }
         else{
-            $this->trip_model->create($id,$this->_uploaded);
+            $this->Trip_model->create($id,$this->_uploaded);
 
-            $this->load->model('tripDetail_model','',TRUE);
+            $this->load->model('Tripdetail_model','',TRUE);
 
             $days = $this->input->post('duration');
             for($i=1; $i<=$days;$i++) {
-                $tripDetail = new TripDetail_model();
+                $tripDetail = new Tripdetail_model();
                 $tripDetail->trip_id = $id;
                 $tripDetail->day = "Day ".$i;
                 $tripDetail->day_detail = $this->db->escape_str($this->input->post('day'.$i));
@@ -151,7 +151,7 @@ class admin extends CI_Controller {
             $res['error']='<div class="alert alert-danger">'.validation_errors().'</div>';
         }
         else{
-            $this->trip_model->update();
+            $this->Trip_model->update();
 
             $days = $this->input->post('duration');
             $id=$this->input->post('hidden');
@@ -160,7 +160,7 @@ class admin extends CI_Controller {
             $this->db->delete('trip_details');
 
             for($i=1; $i<=$days; $i++) {
-                $tripDetail = new TripDetail_model();
+                $tripDetail = new Tripdetail_model();
                 $tripDetail->trip_id = $id;
                 $tripDetail->day = "Day ".$i;
                 $tripDetail->day_detail = $this->db->escape_str($this->input->post('day'.$i));
@@ -179,7 +179,7 @@ class admin extends CI_Controller {
         $id = uniqid();
 
         //query the database
-        $result = $this->trip_model->check_tripID($id);
+        $result = $this->Trip_model->check_tripID($id);
 
         if($result)
         {

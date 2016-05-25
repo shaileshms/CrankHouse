@@ -43,6 +43,27 @@ class Crankhouse extends CI_Controller {
         }
 
     }
+    
+    public function enquiryform()
+    {
+        header('Access-Control-Allow-Origin: *');
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        $from = 'Message from website';
+        $to = 'info@crankhousenepal.com';
+        $subject = "Enquiry for Trip";
+
+
+        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
+
+        if (mail ($to, $subject, $body, $from)) {
+            echo 'Thank You! we will be in touch';
+        } else {
+            echo 'Oops... Please try again later';
+        }
+
+    }
 
     public function enquiry(){
         $this->load->view('enquiry');
